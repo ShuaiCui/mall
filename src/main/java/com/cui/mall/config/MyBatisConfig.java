@@ -1,0 +1,9 @@
+package com.cui.mall.config;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@MapperScan("com.macro.mall.tiny.mbg.mapper")
+public class MyBatisConfig {
+}
