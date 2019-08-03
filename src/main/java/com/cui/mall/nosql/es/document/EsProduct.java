@@ -7,10 +7,11 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 搜索中的商品信息
- * Created by macro on 2018/6/19.
+ *
  */
 @Document(indexName = "pms", type = "product",shards = 1,replicas = 0)
 public class EsProduct implements Serializable {
@@ -39,10 +40,10 @@ public class EsProduct implements Serializable {
     private Integer stock;
     private Integer promotionType;
     private Integer sort;
-//    @Field(type =FieldType.Nested)
-//    private List<EsProductAttributeValue> attrValueList;
+    @Field(type =FieldType.Nested)
+    private List<EsProductAttributeValue> attrValueList;
 
-    //省略了所有getter和setter方法
+
 
 
     public Long getId() {
@@ -179,5 +180,13 @@ public class EsProduct implements Serializable {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public List<EsProductAttributeValue> getAttrValueList() {
+        return attrValueList;
+    }
+
+    public void setAttrValueList(List<EsProductAttributeValue> attrValueList) {
+        this.attrValueList = attrValueList;
     }
 }

@@ -4,6 +4,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan({"com.cui.mall.mbg.mapper","com.macro.mall.tiny.dao"})
+@MapperScan({"com.cui.mall.mbg.mapper","com.cui.mall.dao"})
 public class MyBatisConfig {
 }
